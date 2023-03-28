@@ -1,1 +1,1 @@
-# Joflamme-othello.github.io
+## Jeu de plateau Otello
