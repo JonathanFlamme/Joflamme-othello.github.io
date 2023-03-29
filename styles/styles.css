@@ -5,6 +5,15 @@ body {
     justify-content: space-between;
 }
 
+main{
+    display:flex;
+    height: 650px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+}
+
 header {
     display: flex;
     border: 1px solid black;
@@ -26,9 +35,32 @@ footer {
     display: flex;
     flex-direction: column;
     width: 400px;
-    margin: auto;
+    margin: 40px;
     border: 3px solid black;
 
+}
+
+.hide{
+    visibility:hidden;
+}
+.playerTitle{
+    font-size: 2em;
+    font-weight: bold;
+    background-color: green;
+    padding : 10px 50px;
+    border-radius: 20px;
+    border : solid 2px black;
+    text-shadow: 0px 0px 10px black;
+    color : white;
+}
+
+.playerTitle--Black{
+    color : black;
+    text-shadow: 0px 0px 10px white;
+    
+}
+.playerTitle--White{
+    color : white;
 }
 
 .lineElement {

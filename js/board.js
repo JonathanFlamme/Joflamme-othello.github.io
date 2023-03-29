@@ -1,9 +1,10 @@
 const app = {
-//-------WHO PLAYER BEGUN------/
+    //-------WHO PLAYER BEGUN------/
     whitePlayer: true,
 
     //-----------Create Board Game---------------//
     createBoard() {
+        //-------------- Create Board Game------------------//
         const boardElement = document.createElement('div');
         boardElement.className = 'board'
 
@@ -23,6 +24,19 @@ const app = {
         document.querySelector('main').append(boardElement);
     },
 
+    CreatePlayerPlayedTitle(){    
+     //-----------Create title Who Player Played--------------//
+     const playerTitleWhite = document.createElement('h2');
+     playerTitleWhite.className = 'playerTitle playerTitle--White';
+     playerTitleWhite.innerHTML = 'Player White';
+     document.querySelector('main').prepend(playerTitleWhite);
+
+     const playerTitleBlack = document.createElement('h2');
+     playerTitleBlack.className = 'hide playerTitle playerTitle--Black';
+     playerTitleBlack.innerHTML = 'Player Black';
+     document.querySelector('main').append(playerTitleBlack);
+    },
+
     //----------Init piece black and white center-----------//
     initPieceWhiteBlack() {
         const pieceWhite = document.createElement('div');
@@ -31,7 +45,7 @@ const app = {
         const pieceWhite1 = document.createElement('div');
         pieceWhite1.className = 'whitePiece';
         document.getElementById('5_4_cell').append(pieceWhite1);
-       
+
         const pieceBlack = document.createElement('div');
         pieceBlack.className = 'blackPiece';
         document.getElementById('5_5_cell').append(pieceBlack);
@@ -57,6 +71,8 @@ const app = {
             }
             cellElement.append(piece);
         }
+        //----------Title change when player put a piece--------------//
+        app.whoPlayerPlayed();
     },
 
     //--------- Select cellule ----------//
@@ -67,12 +83,25 @@ const app = {
         }
     },
 
+    //----------Who Player played ------------//
+    whoPlayerPlayed() {
+        if (app.whitePlayer == true) {
+            document.querySelector('.playerTitle--White').classList.toggle('hide');
+            document.querySelector('.playerTitle--Black').classList.toggle('hide');
+        } else {
+            document.querySelector('.playerTitle--White').classList.toggle('hide');
+            document.querySelector('.playerTitle--Black').classList.toggle('hide');
+        }
+    },
+
+
 
     init() {
         app.createBoard();
+        app.CreatePlayerPlayedTitle()
         app.initPieceWhiteBlack();
         app.handleCellTarget();
-        
+
     },
 }
 
