@@ -10,12 +10,11 @@ const app = {
 
         for (let i1 = 1; i1 < 9; i1++) {
             const lineElement = document.createElement('div');
-            lineElement.id = `${i1}_0_cell`;
             lineElement.className = 'lineElement';
 
             for (let i2 = 1; i2 < 9; i2++) {
                 const cellElement = document.createElement('div');
-                cellElement.id = `${i1}_${i2}_cell`;
+                cellElement.id = `${i1}${i2}_cell`;
                 cellElement.className = 'cellElement';
                 lineElement.append(cellElement);
             }
@@ -39,50 +38,46 @@ const app = {
 
     //----------Init piece black and white center-----------//
     initPieceWhiteBlack() {
+
+
+// //--------------------------------------------------------------       
+//         for(i=6;i<8;i++){
+//         const pieceWhite = document.createElement('div');
+//         pieceWhite.className = 'blackPiece';
+//         document.getElementById(`4${i}_cell`).append(pieceWhite);
+        
+        
+//         const pieceWhite2 = document.createElement('div');
+//         pieceWhite2.className = 'blackPiece';
+//         document.getElementById(`7${i}_cell`).append(pieceWhite2);
+//     }
+//     const pieceWhite3 = document.createElement('div');
+//     pieceWhite3.className = 'whitePiece';
+//     document.getElementById(`75_cell`).append(pieceWhite3);
+// //--------------------------------------------------------------       
+        
+
         const pieceWhite = document.createElement('div');
         pieceWhite.className = 'whitePiece';
-        document.getElementById('4_5_cell').append(pieceWhite);
+        const cellWhite = document.getElementById('44_cell')
+        cellWhite.className += ' cellWhitePiece';
+        cellWhite.append(pieceWhite);
+
         const pieceWhite1 = document.createElement('div');
         pieceWhite1.className = 'whitePiece';
-        document.getElementById('5_4_cell').append(pieceWhite1);
+        const cellWhite1 = document.getElementById('55_cell')
+        cellWhite1.className += ' cellWhitePiece';
+        cellWhite1.append(pieceWhite1);
 
         const pieceBlack = document.createElement('div');
         pieceBlack.className = 'blackPiece';
-        document.getElementById('5_5_cell').append(pieceBlack);
+        document.getElementById('54_cell').append(pieceBlack);
         const pieceBlack1 = document.createElement('div');
         pieceBlack1.className = 'blackPiece';
-        document.getElementById('4_4_cell').append(pieceBlack1);
+        document.getElementById('45_cell').append(pieceBlack1);
     },
 
-    //--------- Put Piece in the board ----------//
-    putPiece(event) {
-        const cellElement = event.currentTarget;
-
-        //--------- Create piece in the board ----------//
-        if (cellElement.children.length === 0) {
-            const piece = document.createElement('div');
-            //Choice color piece
-            if (app.whitePlayer === true) {
-                piece.className = 'whitePiece'
-                app.whitePlayer = false;
-            } else {
-                piece.className = 'blackPiece'
-                app.whitePlayer = true;
-            }
-            cellElement.append(piece);
-        }
-        //----------Title change when player put a piece--------------//
-        app.whoPlayerPlayed();
-    },
-
-    //--------- Select cellule ----------//
-    handleCellTarget() {
-        const cells = document.querySelectorAll('.cellElement');
-        for (const cell of cells) {
-            cell.addEventListener('click', app.putPiece);
-        }
-    },
-
+    
     //----------Who Player played ------------//
     whoPlayerPlayed() {
         if (app.whitePlayer == true) {
@@ -100,8 +95,7 @@ const app = {
         app.createBoard();
         app.CreatePlayerPlayedTitle()
         app.initPieceWhiteBlack();
-        app.handleCellTarget();
-
+        movePiece.init()
     },
 }
 
