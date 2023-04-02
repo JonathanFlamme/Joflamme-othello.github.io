@@ -99,11 +99,11 @@ const rulesBlack = {
         let cellLine = Number(event.currentTarget.id.split('')[0]);
         const cellColumn = Number(event.currentTarget.id.split('')[1]);
         let compteur = -1;
-        const cellTargetDown = document.getElementById(`${cellLine - 1}${cellColumn}_cell`);
+        const cellTargetDown = document.getElementById(`${cellLine + 1}${cellColumn}_cell`);
 
 
         //---------------to check if black piece towardt left--------------//
-        for (let i = cellLine + 1; i > 0; i++) {
+        for (let i = cellLine + 1; i < 9; i++) {
             const cellNextDown = document.getElementById(`${i}${cellColumn}_cell`);
             compteur++;
         
