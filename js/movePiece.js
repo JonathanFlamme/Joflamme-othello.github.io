@@ -28,14 +28,16 @@ const movePiece = {
                 app.whitePlayer = true;
             }
             cellElement.append(piece);
+            
+            //----------Title change when player put a piece--------------//
+            app.whoPlayerPlayed();
         }
-        //----------Title change when player put a piece--------------//
-        app.whoPlayerPlayed();
 
         //---------------------Rules----------------------//
         if (app.whitePlayer === false) {
-            rulesWhite.init();
-            
+            rulesWhite.init();        
+        }else{
+            rulesBlack.init();
         }
     },
 

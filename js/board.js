@@ -37,26 +37,8 @@ const app = {
     },
 
     //----------Init piece black and white center-----------//
-    initPieceWhiteBlack() {
-
-
-// //--------------------------------------------------------------       
-//         for(i=6;i<8;i++){
-//         const pieceWhite = document.createElement('div');
-//         pieceWhite.className = 'blackPiece';
-//         document.getElementById(`4${i}_cell`).append(pieceWhite);
-        
-        
-//         const pieceWhite2 = document.createElement('div');
-//         pieceWhite2.className = 'blackPiece';
-//         document.getElementById(`7${i}_cell`).append(pieceWhite2);
-//     }
-//     const pieceWhite3 = document.createElement('div');
-//     pieceWhite3.className = 'whitePiece';
-//     document.getElementById(`75_cell`).append(pieceWhite3);
-// //--------------------------------------------------------------       
-        
-
+    initPieceWhiteBlack() {   
+        // -------  White PIECE init  ------- //
         const pieceWhite = document.createElement('div');
         pieceWhite.className = 'whitePiece';
         const cellWhite = document.getElementById('44_cell')
@@ -69,12 +51,18 @@ const app = {
         cellWhite1.className += ' cellWhitePiece';
         cellWhite1.append(pieceWhite1);
 
-        const pieceBlack = document.createElement('div');
-        pieceBlack.className = 'blackPiece';
-        document.getElementById('54_cell').append(pieceBlack);
+    // -------  Black PIECE init  ---------/
         const pieceBlack1 = document.createElement('div');
         pieceBlack1.className = 'blackPiece';
-        document.getElementById('45_cell').append(pieceBlack1);
+        const cellBlack1 = document.getElementById('54_cell')
+        cellBlack1.className += ' cellBlackPiece';
+        cellBlack1.append(pieceBlack1);
+
+        const pieceBlack2 = document.createElement('div');
+        pieceBlack2.className = 'blackPiece';
+        const cellBlack2 = document.getElementById('45_cell')
+        cellBlack2.className += ' cellBlackPiece';
+        cellBlack2.append(pieceBlack2);
     },
 
     
