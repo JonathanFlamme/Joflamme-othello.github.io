@@ -104,3 +104,9 @@ footer {
     border: 2px solid white;
     margin: 3px 3px;
 }
+
+/* @media(max-width:600px) {
+    .board {
+        width: 350px;
+    }
+} */
