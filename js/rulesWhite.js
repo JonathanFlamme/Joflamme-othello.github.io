@@ -16,16 +16,17 @@ const rulesWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextLeft.className.slice(11).trim() === 'cellWhitePiece' && cellTargetLeft.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellColumn - 1, y = 0; y < compteur; i--, y++) {
                     document.getElementById(`${cellLine}${i}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${cellLine}${i}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
         }
@@ -47,16 +48,17 @@ const rulesWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextRight.className.slice(11).trim() === 'cellWhitePiece' && cellTargetRight.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellColumn + 1, y = 0; y < compteur; i++, y++) {
                     document.getElementById(`${cellLine}${i}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${cellLine}${i}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
 
@@ -79,16 +81,17 @@ const rulesWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextTop.className.slice(11).trim() === 'cellWhitePiece' && cellTargetUp.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellLine - 1, y = 0; y < compteur; i--, y++) {
                     document.getElementById(`${i}${cellColumn}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${i}${cellColumn}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
         }
@@ -110,26 +113,21 @@ const rulesWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextBottom.className.slice(11).trim() === 'cellWhitePiece' && cellTargetDown.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
-
+                
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellLine + 1, y = 0; y < compteur; i++, y++) {
                     document.getElementById(`${i}${cellColumn}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${i}${cellColumn}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
         }
     },
 
-    // init() {
-    //     rulesWhite.ruleRight()
-    //     rulesWhite.ruleLeft()
-    //     rulesWhite.ruleUp()
-    //     rulesWhite.ruleDown()
-    // },
 }

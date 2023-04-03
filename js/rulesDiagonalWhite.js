@@ -16,16 +16,17 @@ const rulesDiagonalWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextUpRight.className.slice(11).trim() === 'cellWhitePiece' && cellTargetUpRight.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellColumn + 1, y = cellLine - 1, iCompteur = 0; iCompteur < compteur; i++, y--, iCompteur++) {
                     document.getElementById(`${y}${i}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${y}${i}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${y}${i}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${y}${i}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
 
@@ -49,16 +50,17 @@ const rulesDiagonalWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextUpLeft.className.slice(11).trim() === 'cellWhitePiece' && cellTargetUpLeft.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellColumn - 1, y = cellLine - 1, iCompteur = 0; iCompteur < compteur; i--, y--, iCompteur++) {
                     document.getElementById(`${y}${i}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${y}${i}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${y}${i}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${y}${i}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
 
@@ -82,16 +84,17 @@ const rulesDiagonalWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextDownLeft.className.slice(11).trim() === 'cellWhitePiece' && cellTargetDownLeft.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellColumn - 1, y = cellLine + 1, iCompteur = 0; iCompteur < compteur; i--, y++, iCompteur++) {
                     document.getElementById(`${y}${i}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${y}${i}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${y}${i}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${y}${i}_cell`).children[0].classList.remove('blackPiece');
                 }
+
+                movePiece.putPiece(event);
                 break;
             }
 
@@ -115,16 +118,17 @@ const rulesDiagonalWhite = {
             //------------if white Piece -> turn over black piece ------------------//
             if (cellNextDownRight.className.slice(11).trim() === 'cellWhitePiece' && cellTargetDownRight.className.slice(11).trim() !== 'cellWhitePiece') {
 
-                movePiece.putPiece(event);
-
+                
                 //-------------- turn over black piece -> white piece --------------//
                 for (let i = cellColumn + 1, y = cellLine + 1, iCompteur = 0; iCompteur < compteur; i++, y++, iCompteur++) {
                     document.getElementById(`${y}${i}_cell`).classList.add('cellWhitePiece')
                     document.getElementById(`${y}${i}_cell`).classList.remove('cellBlackPiece');
-
+                    
                     document.getElementById(`${y}${i}_cell`).children[0].classList.add('whitePiece');
                     document.getElementById(`${y}${i}_cell`).children[0].classList.remove('blackPiece');
                 }
+                
+                movePiece.putPiece(event);
                 break;
             }
 

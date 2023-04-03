@@ -21,6 +21,9 @@ const app = {
             boardElement.append(lineElement);
         }
         document.querySelector('main').append(boardElement);
+        
+        
+
     },
 
     CreatePlayerPlayedTitle(){    
@@ -77,13 +80,27 @@ const app = {
         }
     },
 
+    createcountPoint(){
+        //------ Create show counter point white/black ---------//
+        whitePoint = document.createElement('div');
+        whitePoint.id = 'whitePoint';
+
+        blackPoint = document.createElement('div');
+        blackPoint.id = 'blackPoint';
+
+        document.querySelector('main').prepend(whitePoint);
+        document.querySelector('main').prepend(blackPoint);
+    },
+
 
 
     init() {
         app.createBoard();
         app.CreatePlayerPlayedTitle()
         app.initPieceWhiteBlack();
-        movePiece.init()
+        app.createcountPoint();
+        movePiece.init();
+    
     },
 }
 

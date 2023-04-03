@@ -40,6 +40,7 @@ const movePiece = {
 
             //----------Title change when player put a piece--------------//
             app.whoPlayerPlayed();
+            countPoint.countPoint();
         }
     },
 

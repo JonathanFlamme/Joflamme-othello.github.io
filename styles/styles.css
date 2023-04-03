@@ -16,10 +16,11 @@ main{
 
 header {
     display: flex;
+    flex-direction: column;
     border: 1px solid black;
-    height: 50px;
+    height: 80px;
     justify-content: center;
-    padding-top: 15px;
+    align-items: center;
 }
 
 footer {
