@@ -36,7 +36,7 @@ const rulesWhite = {
         let cellLine = Number(event.currentTarget.id.split('')[0]);
         let cellColumn = Number(event.currentTarget.id.split('')[1]);
         let compteur = -1;
-        const cellTargetLeft = document.getElementById(`${cellLine}${cellColumn+1}_cell`);
+        const cellTargetRight = document.getElementById(`${cellLine}${cellColumn+1}_cell`);
 
 
         //---------------to check if white piece towardt left--------------//
@@ -45,7 +45,7 @@ const rulesWhite = {
             compteur++;
 
             //------------if white Piece -> turn over black piece ------------------//
-            if (cellNextRight.className.slice(11).trim() === 'cellWhitePiece' && cellTargetLeft.className.slice(11).trim() !== 'cellWhitePiece') {
+            if (cellNextRight.className.slice(11).trim() === 'cellWhitePiece' && cellTargetRight.className.slice(11).trim() !== 'cellWhitePiece') {
 
                 movePiece.putPiece(event);
 
@@ -126,10 +126,10 @@ const rulesWhite = {
         }
     },
 
-    init() {
-        rulesWhite.ruleRight()
-        rulesWhite.ruleLeft()
-        rulesWhite.ruleUp()
-        rulesWhite.ruleDown()
-    },
+    // init() {
+    //     rulesWhite.ruleRight()
+    //     rulesWhite.ruleLeft()
+    //     rulesWhite.ruleUp()
+    //     rulesWhite.ruleDown()
+    // },
 }

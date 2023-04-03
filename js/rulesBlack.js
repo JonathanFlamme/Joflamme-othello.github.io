@@ -125,10 +125,10 @@ const rulesBlack = {
         }
     },
 
-    init(){
-        rulesBlack.ruleRight()
-        rulesBlack.ruleLeft()
-        rulesBlack.ruleUp()
-        rulesBlack.ruleDown()
-    },
+    // init(){
+    //     rulesBlack.ruleRight()
+    //     rulesBlack.ruleLeft()
+    //     rulesBlack.ruleUp()
+    //     rulesBlack.ruleDown()
+    // },
 }
