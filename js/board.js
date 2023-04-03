@@ -82,10 +82,10 @@ const app = {
 
     createcountPoint(){
         //------ Create show counter point white/black ---------//
-        whitePoint = document.createElement('div');
+        whitePoint = document.createElement('h3');
         whitePoint.id = 'whitePoint';
 
-        blackPoint = document.createElement('div');
+        blackPoint = document.createElement('h4');
         blackPoint.id = 'blackPoint';
 
         document.querySelector('main').prepend(whitePoint);
