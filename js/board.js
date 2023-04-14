@@ -22,7 +22,16 @@ const app = {
         }
         document.querySelector('main').append(boardElement);
         
+
+        //---------  Create Board for wainting piece ---------//
+        waitPieceWhite = document.createElement('div');
+        waitPieceWhite.id = 'waitPieceWhite';
         
+        waitPieceBlack = document.createElement('div');
+        waitPieceBlack.id = 'waitPieceBlack';
+        
+        document.querySelector('main').prepend(waitPieceWhite);
+        document.querySelector('main').append(waitPieceBlack);
 
     },
 
@@ -82,14 +91,22 @@ const app = {
 
     createcountPoint(){
         //------ Create show counter point white/black ---------//
-        whitePoint = document.createElement('h3');
+        countPoint = document.createElement('div');
+        countPoint.id = 'countPoint';
+        
+        whitePoint = document.createElement('p');
         whitePoint.id = 'whitePoint';
+        whitePoint.innerHTML = 'White = 0'; 
 
-        blackPoint = document.createElement('h4');
+        blackPoint = document.createElement('p');
         blackPoint.id = 'blackPoint';
+        blackPoint.innerHTML = 'Black = 0'; 
 
-        document.querySelector('main').prepend(whitePoint);
-        document.querySelector('main').prepend(blackPoint);
+
+        document.querySelector('main').prepend(countPoint);
+        
+        document.querySelector('#countPoint').prepend(whitePoint);
+        document.querySelector('#countPoint').prepend(blackPoint);
     },
 
 
