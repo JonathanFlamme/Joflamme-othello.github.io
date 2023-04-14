@@ -4,7 +4,13 @@ const app = {
         whitePieceLeft : 30,
         blackPieceLeft : 1,
 
+        emptyBoard() {
+            document.querySelector('main').innerHTML = ' ';
+            app.whitePlayer = true;
+            app.whitePieceLeft = 30;
+            app.blackPieceLeft = 1;
 
+        },
         //-----------Create Board Game---------------//
         createBoard() {
             //-------------- Create Board Game------------------//
@@ -113,8 +119,21 @@ const app = {
     },
 
     createcountPoint() {
+    //------- Create block header countPoint and button RESET -------//
+        const blockPointReset = document.createElement('div');
+        blockPointReset.className = 'blockPointReset';
+        document.querySelector('main').prepend(blockPointReset);
+
+        // Button RESET
+        const btnReset = document.createElement('button');
+        btnReset.className = 'btn btnReset';
+        btnReset.innerHTML = 'Reset'
+        document.querySelector('.blockPointReset').append(btnReset);
+
+        
+
         //------ Create show counter point white/black ---------//
-        countPoint = document.createElement('div');
+        const countPoint = document.createElement('div');
         countPoint.id = 'countPoint';
 
         whitePoint = document.createElement('p');
@@ -125,15 +144,20 @@ const app = {
         blackPoint.id = 'blackPoint';
         blackPoint.innerHTML = 'Black = 0';
 
+        document.querySelector('.blockPointReset').append(countPoint);
+        document.querySelector('#countPoint').append(blackPoint);
+        document.querySelector('#countPoint').append(whitePoint);
 
-        document.querySelector('main').prepend(countPoint);
-
-        document.querySelector('#countPoint').prepend(whitePoint);
-        document.querySelector('#countPoint').prepend(blackPoint);
+        // Button to skip the turn
+        const btnSkip = document.createElement('button');
+        btnSkip.className = 'btn btnSkip';
+        btnSkip.innerHTML = 'To skip'
+        document.querySelector('.blockPointReset').append(btnSkip);
     },
 
 
     init() {
+        app.emptyBoard();
         app.createBoard();
         app.createWaitingBoard();
         app.CreatePlayerPlayedTitle()
@@ -143,5 +167,6 @@ const app = {
 
     },
 }
+
 
 app.init()

@@ -17,6 +17,19 @@ const movePiece = {
         }
     },
 
+    //--------- Buttun Reset -----------------//
+    buttonReset() {
+        const btn_Reset = document.querySelector('.btnReset');
+        btn_Reset.addEventListener('click', app.init);
+
+        const btn_skip = document.querySelector('.btnSkip');
+        btn_skip.addEventListener('click', movePiece.buttonSkip);
+    },
+    //--------- Buttun to skip the turn -----------------//
+    buttonSkip() {
+        app.whitePlayer ? app.whitePlayer = false : app.whitePlayer = true;
+        app.whoPlayerPlayed();        
+    },
 
     //--------- Put Piece in the board ----------//
     putPiece(event) {
@@ -173,7 +186,8 @@ const movePiece = {
 
 
     init() {
-        movePiece.handleCellTarget()
+        movePiece.handleCellTarget();
+        movePiece.buttonReset();
     }
 
 }

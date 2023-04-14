@@ -15,11 +15,11 @@ const countPoint = {
                 if (cellTested !== null) {
                     if (cellTested.className.slice(11).trim() === 'cellBlackPiece') {
                         countPoint.blackPoint++;
-                        console.log('blackpoint',countPoint.blackPoint)
+                        // console.log('blackpoint',countPoint.blackPoint)
                     }
                     if (cellTested.className.slice(11).trim() === 'cellWhitePiece') {
                         countPoint.whitePoint++;
-                        console.log('whitePoint',countPoint.whitePoint)
+                        // console.log('whitePoint',countPoint.whitePoint)
 
                     }
                 }
