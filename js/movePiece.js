@@ -41,6 +41,7 @@ const movePiece = {
             //----------Title change when player put a piece--------------//
             app.whoPlayerPlayed();
             countPoint.countPoint();
+            movePiece.removePiece();
         }
     },
 
@@ -92,8 +93,8 @@ const movePiece = {
 
             //------------DEBUGG----------------
             //--------------------
-            console.log(cellLine)
-            console.log(cellColumn)
+            // console.log(cellLine)
+            // console.log(cellColumn)
 
             //check down 
             if (cellLine < 8 && document.getElementById(`${cellLineNext}${cellColumn}_cell`).children.length === 1) {
@@ -139,24 +140,40 @@ const movePiece = {
             movePiece.pieceAround ? movePiece.ruleMovePiece() : null;
         }
 
-
-        console.log('down', movePiece.pieceDown)
-        console.log('up', movePiece.pieceUp)
-        console.log('right', movePiece.pieceRight)
-        console.log('left', movePiece.pieceLeft)
-        console.log('upRight', movePiece.pieceUpRight)
-        console.log('upLeft', movePiece.pieceUpLeft)
-        console.log('DownLeft', movePiece.pieceDownLeft)
-        console.log('DownRight', movePiece.pieceDownRight)
-        console.log('piecearound', movePiece.pieceAround)
+        // console.log('down', movePiece.pieceDown)
+        // console.log('up', movePiece.pieceUp)
+        // console.log('right', movePiece.pieceRight)
+        // console.log('left', movePiece.pieceLeft)
+        // console.log('upRight', movePiece.pieceUpRight)
+        // console.log('upLeft', movePiece.pieceUpLeft)
+        // console.log('DownLeft', movePiece.pieceDownLeft)
+        // console.log('DownRight', movePiece.pieceDownRight)
+        // console.log('piecearound', movePiece.pieceAround)
 
     },
+
+    removePiece() {
+        if (app.whitePlayer === false) {
+
+            const whitePieceRemoved = document.querySelector('#waitingPieceWhite' + app.whitePieceLeft);
+            document.querySelector('.block_waitingPiece--White').removeChild(whitePieceRemoved);
+
+            app.whitePieceLeft--;
+
+        } else {
+            const blackPieceRemoved = document.querySelector('#waitingPieceBlack' + app.blackPieceLeft);
+            document.querySelector('.block_waitingPiece--Black').removeChild(blackPieceRemoved);
+
+            app.blackPieceLeft++;
+            console.log(app.blackPieceLeft);
+        }
+    },
+
 
 
 
     init() {
         movePiece.handleCellTarget()
-
     }
 
 }

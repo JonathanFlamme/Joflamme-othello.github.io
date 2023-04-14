@@ -1,6 +1,9 @@
 const app = {
         //-------WHO PLAYER BEGUN------/
         whitePlayer: true,
+        whitePieceLeft : 30,
+        blackPieceLeft : 1,
+
 
         //-----------Create Board Game---------------//
         createBoard() {
@@ -31,15 +34,15 @@ const app = {
 
         
         waitPieceWhite = document.createElement('div');
-        waitPieceWhite.id = 'block_waitingPieceWhite';
+        waitPieceWhite.className = 'bloc_waitingPiece block_waitingPiece--White';
 
         waitPieceBlack = document.createElement('div');
-        waitPieceBlack.id = 'block_waitingPieceBlack';
+        waitPieceBlack.className = 'bloc_waitingPiece block_waitingPiece--Black';
         
         document.querySelector('.boardGlobal').prepend(waitPieceWhite);
         document.querySelector('.boardGlobal').append(waitPieceBlack);
 
-        for (let i = 1; i < 33; i++) {
+        for (let i = 1; i < 31; i++) {
             const waitingPieceWhite = document.createElement('div');
             waitingPieceWhite.className = 'waitingPieceWhite';
             waitingPieceWhite.id = 'waitingPieceWhite' + i;
@@ -48,8 +51,8 @@ const app = {
             waitingPieceBlack.className = 'waitingPieceBlack';
             waitingPieceBlack.id = 'waitingPieceBlack' + i;
             
-            document.querySelector('#block_waitingPieceWhite').append(waitingPieceWhite);
-            document.querySelector('#block_waitingPieceBlack').append(waitingPieceBlack);
+            document.querySelector('.block_waitingPiece--White').append(waitingPieceWhite);
+            document.querySelector('.block_waitingPiece--Black').append(waitingPieceBlack);
         }
 
 
