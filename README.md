@@ -1,1 +1,1 @@
-## Jeu de plateau Otello
+## Jeu de plateau Othello
