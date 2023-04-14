@@ -52,6 +52,11 @@ footer h2 {
     font-size: 0.7em;
 }
 
+#signature_treant{
+    width : 35px;
+
+}
+
 
 /*---------- Block CountPoint Black and White ---------*/
 #countPoint {
@@ -186,6 +191,7 @@ footer h2 {
     display: flex;
     width : 100vw;
     justify-content: space-around;
+    margin-top: 10px;
 }
 
 .btn{
@@ -202,3 +208,4 @@ footer h2 {
     color: white;
     text-shadow: 0px 0px 5px black;
 }
+
