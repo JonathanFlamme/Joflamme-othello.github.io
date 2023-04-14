@@ -26,7 +26,7 @@ const countPoint = {
             }
         }
 
-        document.querySelector('#whitePoint').innerHTML = `Black Point = ${countPoint.blackPoint}`
-        document.querySelector('#blackPoint').innerHTML = `White Point = ${countPoint.whitePoint}`
+        document.querySelector('#whitePoint').innerHTML = `Black = ${countPoint.blackPoint}`
+        document.querySelector('#blackPoint').innerHTML = `White = ${countPoint.whitePoint}`
     }
 }

@@ -14,6 +14,7 @@ main {
     flex-direction: column;
 
 }
+
 /*---------- HEADER -----------*/
 header {
     font-family: 'Dancing Script', cursive;
@@ -23,16 +24,16 @@ header {
     height: 50px;
     justify-content: center;
     align-items: center;
-    color : white;
+    color: white;
     text-shadow: 0px 0px 5px black;
     font-size: 2.5em;
 }
 
-header h1{
+header h1 {
     text-align: center;
     width: 90vw;
     padding-bottom: 10px;
-    border-bottom:thin white solid;
+    border-bottom: thin white solid;
 }
 
 
@@ -52,13 +53,14 @@ footer h2 {
 }
 
 
-/* Block CountPoint Black and White */
+/*---------- Block CountPoint Black and White ---------*/
 #countPoint {
 
     text-align: center;
     font-size: 1.4em;
-    margin-bottom: 30px;
-    padding: 15px 40px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 15px 30px;
     background-image: url('../image/bg_point_hoodLight.jpg');
     border-radius: 20px;
     box-shadow: 5px 5px 5px black;
@@ -66,31 +68,21 @@ footer h2 {
     text-shadow: 0px 0px 5px black;
 }
 
-/* Inside CountPoint Black and White */
+/*-------- Inside CountPoint Black and White -------*/
 #whitePoint {
     padding-top: 10px;
 }
 
-
-.board {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    margin: 25px;
-    border: 3px solid black;
-
-
-}
-
+/*------ Title player black and white -------*/
 .hide {
     visibility: hidden;
 }
 
 .playerTitle {
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: bold;
     background-color: green;
-    padding: 10px 50px;
+    padding: 8px 40px;
     border-radius: 20px;
     border: solid 2px black;
     text-shadow: 0px 0px 10px black;
@@ -108,6 +100,20 @@ footer h2 {
 }
 
 /* --------BOARD GAME -------*/
+.boardGlobal {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 328px;
+    border: 5px solid black;
+    border-image: url('../image/bg_point_hoodLight.jpg') 1;
+}
+
 .lineElement {
     display: flex;
     flex-direction: row;
@@ -117,16 +123,16 @@ footer h2 {
 
 .cellElement {
     background-color: green;
-    width: 50px;
-    height: 50px;
+    width: 41px;
+    height: 41px;
     border: 1px solid black;
 
 }
 
 .whitePiece {
     background-color: white;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
     border: 2px solid black;
     margin: 3px 3px;
@@ -134,29 +140,45 @@ footer h2 {
 
 .blackPiece {
     background-color: black;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
     border: 2px solid white;
     margin: 3px 3px;
 }
 
-@media (max-width:600px) {
+/*------------ Waiting board piece -----------*/
 
-    .board {
-        width: 328px;
-    }
+#block_waitingPieceWhite {
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px 10px 0 0 ;
+    justify-content: space-around;
+    background-image: url('../image/bg_point_hoodLight.jpg');
+    padding : 5px 5px 5px 5px;
+}
+#block_waitingPieceBlack {
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 30px;
+    border-radius: 0 0 10px 10px ;
+    justify-content: space-around;
+    background-image: url('../image/bg_point_hoodLight.jpg');
+    padding : 5px 5px 5px 5px;
+    
+}
 
-    .cellElement {
-        background-color: green;
-        width: 41px;
-        height: 41px;
-        border: 1px solid black;
-    }
+.waitingPieceWhite{
+    width: 4px;
+    background-color: black;
+    box-shadow: 2px 0 0 rgba(255, 255, 255, 0.76);
+}
 
-    .whitePiece,
-    .blackPiece {
-        width: 30px;
-        height: 30px;
-    }
+.waitingPieceBlack{
+    width: 4px;
+    background-color: black;
+    box-shadow: -2px 0 0 rgba(255, 255, 255, 0.76);
 }
