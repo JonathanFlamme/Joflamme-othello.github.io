@@ -1,10 +1,7 @@
 body {
     font-family: 'Dancing Script', cursive;
-    background-color: #2E733A;
-    background-image: url('../image/othello-spin-master.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+    background-image: url('../image/bg_body_hoodDark.jpg');
+    height: 100vh;
 }
 
 .boardGameContent {
@@ -13,7 +10,7 @@ body {
     justify-content: space-between;
     margin: auto;
     height: 100vh;
-    background-image: url('../image/bg_body_hoodDark.jpg');
+    
 }
 
 main {
@@ -225,7 +222,13 @@ footer h2 {
         margin-top: 60px;
 
     }
-
+    body {
+        font-family: 'Dancing Script', cursive;
+        background-image: url('../image/othello-spin-master.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
 
     header h1 {
 
@@ -238,6 +241,7 @@ footer h2 {
     .boardGameContent {
         width: 700px;
         margin: auto;
+        background-image: url('../image/bg_body_hoodDark.jpg');
     }
 
 }
