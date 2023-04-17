@@ -149,7 +149,7 @@ const app = {
         // Button to skip the turn
         const btnSkip = document.createElement('button');
         btnSkip.className = 'btn btnSkip';
-        btnSkip.innerHTML = 'To skip'
+        btnSkip.innerHTML = 'Skip'
         document.querySelector('.blockPointReset').append(btnSkip);
     },
 

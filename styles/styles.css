@@ -126,7 +126,7 @@ footer h3 {
     font-family: sans-serif;
     font-size: 1.7em;
     font-weight: bold;
-    background-color: #2E733A;
+    background-image: url('../image/cellule.jpg');
     padding: 8px 40px;
     border-radius: 20px;
     border: solid 2px black;
@@ -136,13 +136,14 @@ footer h3 {
 .playerTitle--Black {
     color: black;
     text-shadow: 0px 0px 10px white;
+    
 
 }
 
 .playerTitle--White {
     color: white;
     text-shadow: 0px 0px 10px black;
-}
+  }
 
 /* --------BOARD GAME -------*/
 .boardGlobal {
@@ -168,7 +169,8 @@ footer h3 {
 }
 
 .cellElement {
-    background-color: #2E733A;
+    background-image: url('../image/cellule.jpg');
+    /* background-color: #2E733A; Couleur original*/
     width: 41px;
     height: 41px;
     border: 1px solid black;
@@ -177,21 +179,25 @@ footer h3 {
 }
 
 .whitePiece--init {
-    background-color: white;
+    background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(145, 145, 145) );
+    box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    border: 2px solid black;
     margin: auto;
+    /* background-color: white; */
+    /* border: 2px solid black; */
 }
 
 .blackPiece--init {
-    background-color: black;
+    background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+    box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    border: 2px solid white;
     margin: auto;
+    /* background-color: black; */
+    /* border: 2px solid white; */
 }
 
 /*------------- ANIMATTION PIECE -----------*/
@@ -199,8 +205,9 @@ footer h3 {
     from {
         width: 30px;
         margin: auto;
-        background-color: black;
-        border: 2px solid white;
+        background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+        box-shadow: 1px 1px 3px black;
+        /* border: 2px solid white; */
     }
 
     50% {
@@ -211,8 +218,9 @@ footer h3 {
     to {
         width: 30px;
         margin: auto;
-        background-color: white;
-        border: 2px solid black;
+        background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(165, 165, 165) );
+        box-shadow: 1px 1px 3px black;
+        /* border: 2px solid black; */
     }
 }
 
@@ -220,8 +228,9 @@ footer h3 {
     from {
         width: 30px;
         margin: auto;
-        background-color: white;
-        border: 2px solid black;
+        background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(165, 165, 165) );
+        box-shadow: 1px 1px 3px black;
+        /* border: 2px solid black; */
     }
 
     50% {
@@ -232,8 +241,9 @@ footer h3 {
     to {
         width: 30px;
         margin: auto;
-        background-color: black;
-        border: 2px solid white;
+        background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+        box-shadow: 1px 1px 3px black;
+        /* border: 2px solid white; */
     }
 }
 .whitePiece--anim{
@@ -247,21 +257,23 @@ footer h3 {
 
 
 .whitePiece {
-    background-color: white;
+    background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(165, 165, 165) );
+    box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    border: 2px solid black;
     margin: auto;
+    /* border: 2px solid black; */
 }
 
 .blackPiece {
-    background-color: black;
+    background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+    box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    border: 2px solid white;
     margin: auto;
+    /* border: 2px solid white; */
 }
 
 /*------------ Waiting board piece -----------*/
