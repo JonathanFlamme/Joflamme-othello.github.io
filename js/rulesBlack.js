@@ -25,6 +25,9 @@ const rulesBlack = {
 
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
@@ -64,6 +67,9 @@ const rulesBlack = {
 
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
@@ -103,6 +109,9 @@ const rulesBlack = {
 
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
@@ -141,6 +150,9 @@ const rulesBlack = {
 
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);

@@ -27,6 +27,9 @@ const rulesDiagonalBlack = {
 
                         document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
@@ -65,6 +68,9 @@ const rulesDiagonalBlack = {
 
                         document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
@@ -103,6 +109,9 @@ const rulesDiagonalBlack = {
 
                         document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
@@ -141,6 +150,9 @@ const rulesDiagonalBlack = {
 
                         document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece');
                         document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece');
+
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.add('blackPiece--anim');
+                        document.getElementById(`${y}${i}_cell`).children[0].classList.remove('whitePiece--anim');
                     }
 
                     movePiece.putPiece(event);
