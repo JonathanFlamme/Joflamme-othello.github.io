@@ -68,12 +68,12 @@ const app = {
         //-----------Create title Who Player Played--------------//
         const playerTitleWhite = document.createElement('h2');
         playerTitleWhite.className = 'show playerTitle playerTitle--White';
-        playerTitleWhite.innerHTML = 'Player White';
+        playerTitleWhite.innerHTML = 'White Player';
         document.querySelector('main').prepend(playerTitleWhite);
 
         const playerTitleBlack = document.createElement('h2');
         playerTitleBlack.className = 'hide playerTitle playerTitle--Black';
-        playerTitleBlack.innerHTML = 'Player Black';
+        playerTitleBlack.innerHTML = 'Black Player';
         document.querySelector('main').append(playerTitleBlack);
     },
 
