@@ -79,6 +79,8 @@ footer h3 {
     text-shadow: 0px 0px 5px black;
 }
 
+
+
 #blackPoint {
     padding-bottom: 10px;
 }
@@ -136,14 +138,14 @@ footer h3 {
 .playerTitle--Black {
     color: black;
     text-shadow: 0px 0px 10px white;
-    
+
 
 }
 
 .playerTitle--White {
     color: white;
     text-shadow: 0px 0px 10px black;
-  }
+}
 
 /* --------BOARD GAME -------*/
 .boardGlobal {
@@ -179,25 +181,21 @@ footer h3 {
 }
 
 .whitePiece--init {
-    background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(145, 145, 145) );
+    background: radial-gradient(circle at 10px 10px, rgb(255, 255, 255), rgb(145, 145, 145));
     box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
     border-radius: 50px;
     margin: auto;
-    /* background-color: white; */
-    /* border: 2px solid black; */
 }
 
 .blackPiece--init {
-    background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+    background: radial-gradient(circle at 10px 10px, rgb(73, 73, 73), black);
     box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
     border-radius: 50px;
     margin: auto;
-    /* background-color: black; */
-    /* border: 2px solid white; */
 }
 
 /*------------- ANIMATTION PIECE -----------*/
@@ -205,7 +203,7 @@ footer h3 {
     from {
         width: 30px;
         margin: auto;
-        background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+        background: radial-gradient(circle at 10px 10px, rgb(73, 73, 73), black);
         box-shadow: 1px 1px 3px black;
         /* border: 2px solid white; */
     }
@@ -218,7 +216,7 @@ footer h3 {
     to {
         width: 30px;
         margin: auto;
-        background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(165, 165, 165) );
+        background: radial-gradient(circle at 10px 10px, rgb(255, 255, 255), rgb(165, 165, 165));
         box-shadow: 1px 1px 3px black;
         /* border: 2px solid black; */
     }
@@ -228,7 +226,7 @@ footer h3 {
     from {
         width: 30px;
         margin: auto;
-        background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(165, 165, 165) );
+        background: radial-gradient(circle at 10px 10px, rgb(255, 255, 255), rgb(165, 165, 165));
         box-shadow: 1px 1px 3px black;
         /* border: 2px solid black; */
     }
@@ -241,23 +239,25 @@ footer h3 {
     to {
         width: 30px;
         margin: auto;
-        background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+        background: radial-gradient(circle at 10px 10px, rgb(73, 73, 73), black);
         box-shadow: 1px 1px 3px black;
         /* border: 2px solid white; */
     }
 }
-.whitePiece--anim{
+
+.whitePiece--anim {
     animation-name: animPieceBlackWhite;
     animation-duration: 1s;
 }
-.blackPiece--anim{
+
+.blackPiece--anim {
     animation-name: animPieceWhiteBlack;
     animation-duration: 1s;
 }
 
 
 .whitePiece {
-    background: radial-gradient(circle at 10px 10px,rgb(255, 255, 255), rgb(165, 165, 165) );
+    background: radial-gradient(circle at 10px 10px, rgb(255, 255, 255), rgb(165, 165, 165));
     box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
@@ -267,7 +267,7 @@ footer h3 {
 }
 
 .blackPiece {
-    background: radial-gradient(circle at 10px 10px,rgb(73, 73, 73), black );
+    background: radial-gradient(circle at 10px 10px, rgb(73, 73, 73), black);
     box-shadow: 1px 1px 3px black;
     width: 30px;
     height: 30px;
@@ -320,11 +320,13 @@ footer h3 {
 
 .btn {
     font-size: 0.8em;
-    height: 50px;
-    width: 60px;
-    font-weight:bolder;
+    height: 40px;
+    width: 70px;
+    font-weight: bolder;
     font-family: sans-serif;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-image: url('../image/bg_point_hoodLight.jpg');
     border: none;
     border-radius: 10px;
@@ -333,13 +335,42 @@ footer h3 {
     text-shadow: 0px 0px 5px black;
 }
 
-.btn:active{
+.btn:active {
     box-shadow: none;
     transform: translateY(3px);
 }
-.btn:hover{
+
+.btn:hover {
     border: 1px solid black;
     font-size: 0.9em;
+}
+
+#btnResetEasyMode {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.btnEasyMode{
+    font-size: 0.8em;
+    height: 40px;
+    width: 70px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin-top: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: url('../image/bg_point_hoodLight.jpg');
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+.btnEasyModeActivated{
+    box-shadow: none;
+    transform: translateY(3px);
+    border: 3px solid black;
 }
 
 @media (min-width : 700px) {
@@ -371,4 +402,41 @@ footer h3 {
         background-image: url('../image/bg_body_hoodDark.jpg');
     }
 
+}
+
+
+/*----------------------*/
+/* ----- EasyMODE ----- */
+/*----------------------*/
+@keyframes potentialPiece {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+}
+
+.potential {
+    animation-name: potentialPiece;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.potential--black {
+    background: radial-gradient(circle at 10px 10px, rgb(73, 73, 73), black);
+    box-shadow: 1px 1px 3px black;
+}
+
+.potential--white {
+    background: radial-gradient(circle at 10px 10px, rgb(255, 255, 255), rgb(165, 165, 165));
+    box-shadow: 1px 1px 3px black;
 }

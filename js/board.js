@@ -1,50 +1,50 @@
 const app = {
-        //-------WHO PLAYER BEGUN------/
-        whitePlayer: true,
-        whitePieceLeft : 30,
-        blackPieceLeft : 1,
+    //-------WHO PLAYER BEGUN------/
+    whitePlayer: true,
+    whitePieceLeft: 30,
+    blackPieceLeft: 1,
 
-        emptyBoard() {
-            document.querySelector('main').innerHTML = ' ';
-            app.whitePlayer = true;
-            app.whitePieceLeft = 30;
-            app.blackPieceLeft = 1;
+    emptyBoard() {
+        document.querySelector('main').innerHTML = ' ';
+        app.whitePlayer = true;
+        app.whitePieceLeft = 30;
+        app.blackPieceLeft = 1;
 
-        },
-        //-----------Create Board Game---------------//
-        createBoard() {
-            //-------------- Create Board Game------------------//
-            const boardGlobal = document.createElement('div');
-            boardGlobal.className = 'boardGlobal';
-            const boardElement = document.createElement('div');
-            boardElement.className = 'board';
+    },
+    //-----------Create Board Game---------------//
+    createBoard() {
+        //-------------- Create Board Game------------------//
+        const boardGlobal = document.createElement('div');
+        boardGlobal.className = 'boardGlobal';
+        const boardElement = document.createElement('div');
+        boardElement.className = 'board';
 
-            for (let i1 = 1; i1 < 9; i1++) {
-                const lineElement = document.createElement('div');
-                lineElement.className = 'lineElement';
+        for (let i1 = 1; i1 < 9; i1++) {
+            const lineElement = document.createElement('div');
+            lineElement.className = 'lineElement';
 
-                for (let i2 = 1; i2 < 9; i2++) {
-                    const cellElement = document.createElement('div');
-                    cellElement.id = `${i1}${i2}_cell`;
-                    cellElement.className = 'cellElement';
-                    lineElement.append(cellElement);
-                }
-                boardElement.append(lineElement);
+            for (let i2 = 1; i2 < 9; i2++) {
+                const cellElement = document.createElement('div');
+                cellElement.id = `${i1}${i2}_cell`;
+                cellElement.className = 'cellElement';
+                lineElement.append(cellElement);
             }
-            document.querySelector('main').append(boardGlobal);
-            document.querySelector('.boardGlobal').append(boardElement);
-        },
+            boardElement.append(lineElement);
+        }
+        document.querySelector('main').append(boardGlobal);
+        document.querySelector('.boardGlobal').append(boardElement);
+    },
 
-        //---------  Create Board for waiting piece ---------//
-        createWaitingBoard() {
+    //---------  Create Board for waiting piece ---------//
+    createWaitingBoard() {
 
-        
+
         waitPieceWhite = document.createElement('div');
         waitPieceWhite.className = 'bloc_waitingPiece block_waitingPiece--White';
 
         waitPieceBlack = document.createElement('div');
         waitPieceBlack.className = 'bloc_waitingPiece block_waitingPiece--Black';
-        
+
         document.querySelector('.boardGlobal').prepend(waitPieceWhite);
         document.querySelector('.boardGlobal').append(waitPieceBlack);
 
@@ -52,11 +52,11 @@ const app = {
             const waitingPieceWhite = document.createElement('div');
             waitingPieceWhite.className = 'waitingPieceWhite';
             waitingPieceWhite.id = 'waitingPieceWhite' + i;
-            
+
             const waitingPieceBlack = document.createElement('div');
             waitingPieceBlack.className = 'waitingPieceBlack';
             waitingPieceBlack.id = 'waitingPieceBlack' + i;
-            
+
             document.querySelector('.block_waitingPiece--White').append(waitingPieceWhite);
             document.querySelector('.block_waitingPiece--Black').append(waitingPieceBlack);
         }
@@ -108,7 +108,7 @@ const app = {
 
 
     //----------Who Player played ------------//
-     whoPlayerPlayed() {
+    whoPlayerPlayed() {
         document.querySelector('.playerTitle--White').classList.toggle('hide');
         document.querySelector('.playerTitle--Black').classList.toggle('hide');
 
@@ -117,18 +117,29 @@ const app = {
     },
 
     createcountPoint() {
-    //------- Create block header countPoint and button RESET -------//
+        //------- Create block header countPoint and button RESET -------//
         const blockPointReset = document.createElement('div');
         blockPointReset.className = 'blockPointReset';
         document.querySelector('main').prepend(blockPointReset);
+
+        // Div global RESET - EASYMODE
+        const divResetEasyMode = document.createElement('div');
+        divResetEasyMode.id = 'btnResetEasyMode';
+        document.querySelector('.blockPointReset').append(divResetEasyMode);
+
+        // Button EASYMODE
+        const btnResetEasyMode = document.createElement('button');
+        btnResetEasyMode.className = 'btnEasyMode';
+        btnResetEasyMode.innerHTML = 'Easy'
+        document.querySelector('#btnResetEasyMode').append(btnResetEasyMode);
 
         // Button RESET
         const btnReset = document.createElement('button');
         btnReset.className = 'btn btnReset';
         btnReset.innerHTML = 'Reset'
-        document.querySelector('.blockPointReset').append(btnReset);
+        document.querySelector('#btnResetEasyMode').append(btnReset);
 
-        
+
 
         //------ Create show counter point white/black ---------//
         const countPoint = document.createElement('div');
@@ -162,6 +173,7 @@ const app = {
         app.initPieceWhiteBlack();
         app.createcountPoint();
         movePiece.init();
+        easyMode.init();
 
     },
 }

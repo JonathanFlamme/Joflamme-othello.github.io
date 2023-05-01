@@ -1,9 +1,16 @@
 const rulesWhite = {
 
-    ruleLeft() {
+    ruleLeft(event, cellLineEasyMode, cellcolumnEasyMode) {
 
-        let cellLine = Number(event.currentTarget.id.split('')[0]);
-        let cellColumn = Number(event.currentTarget.id.split('')[1]);
+        if (easyMode.easyMode === true) {
+            cellLine = cellLineEasyMode;
+            cellColumn = cellcolumnEasyMode;
+            
+        } else {
+
+            cellLine = Number(event.currentTarget.id.split('')[0]);
+            cellColumn = Number(event.currentTarget.id.split('')[1]);
+        }
         let compteur = -1;
         const cellTargetLeft = document.getElementById(`${cellLine}${cellColumn-1}_cell`);
 
@@ -12,13 +19,17 @@ const rulesWhite = {
 
             const cellNextLeft = document.getElementById(`${cellLine}${i}_cell`);
             compteur++;
-            console.log("children", cellNextLeft.children.length === 1)
+
             //----------- Check if there is a piece on the cell ---------------//
             if (cellNextLeft.children.length === 1) {
                 //------------if white Piece -> turn over black piece ------------------//
                 if (cellNextLeft.className.slice(11).trim() === 'cellWhitePiece' && cellTargetLeft.className.slice(11).trim() !== 'cellWhitePiece') {
 
-
+                    //------------ Check Potential position for EasyMode ----------------//
+                    if (easyMode.easyMode === true) {
+                        easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
+                        return
+                    }
                     //-------------- turn over black piece -> white piece --------------//
                     for (let i = cellColumn - 1, y = 0; y < compteur; i--, y++) {
                         document.getElementById(`${cellLine}${i}_cell`).classList.add('cellWhitePiece')
@@ -30,7 +41,7 @@ const rulesWhite = {
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('whitePiece--anim');
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('blackPiece--anim');
                     }
-
+                    movePiece.counterRule++;
                     movePiece.putPiece(event);
                     break;
                 }
@@ -40,10 +51,17 @@ const rulesWhite = {
         }
     },
 
-    ruleRight() {
+    ruleRight(event, cellLineEasyMode, cellcolumnEasyMode) {
 
-        let cellLine = Number(event.currentTarget.id.split('')[0]);
-        let cellColumn = Number(event.currentTarget.id.split('')[1]);
+        if (easyMode.easyMode === true) {
+            cellLine = cellLineEasyMode;
+            cellColumn = cellcolumnEasyMode;
+        } else {
+
+            cellLine = Number(event.currentTarget.id.split('')[0]);
+            cellColumn = Number(event.currentTarget.id.split('')[1]);
+        }
+
         let compteur = -1;
         const cellTargetRight = document.getElementById(`${cellLine}${cellColumn+1}_cell`);
 
@@ -58,7 +76,11 @@ const rulesWhite = {
                 //------------if white Piece -> turn over black piece ------------------//
                 if (cellNextRight.className.slice(11).trim() === 'cellWhitePiece' && cellTargetRight.className.slice(11).trim() !== 'cellWhitePiece') {
 
-
+                    //------------ Check Potential position for EasyMode ----------------//
+                    if (easyMode.easyMode === true) {
+                        easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
+                        return
+                    }
                     //-------------- turn over black piece -> white piece --------------//
                     for (let i = cellColumn + 1, y = 0; y < compteur; i++, y++) {
                         document.getElementById(`${cellLine}${i}_cell`).classList.add('cellWhitePiece')
@@ -70,7 +92,7 @@ const rulesWhite = {
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.add('whitePiece--anim');
                         document.getElementById(`${cellLine}${i}_cell`).children[0].classList.remove('blackPiece--anim');
                     }
-
+                    movePiece.counterRule++;
                     movePiece.putPiece(event);
                     break;
                 }
@@ -80,10 +102,17 @@ const rulesWhite = {
         }
     },
 
-    ruleUp() {
+    ruleUp(event, cellLineEasyMode, cellcolumnEasyMode) {
 
-        let cellLine = Number(event.currentTarget.id.split('')[0]);
-        const cellColumn = Number(event.currentTarget.id.split('')[1]);
+        if (easyMode.easyMode === true) {
+            cellLine = cellLineEasyMode;
+            cellColumn = cellcolumnEasyMode;
+        } else {
+
+            cellLine = Number(event.currentTarget.id.split('')[0]);
+            cellColumn = Number(event.currentTarget.id.split('')[1]);
+        }
+
         let compteur = -1;
         const cellTargetUp = document.getElementById(`${cellLine - 1}${cellColumn}_cell`);
 
@@ -97,7 +126,11 @@ const rulesWhite = {
                 //------------if white Piece -> turn over black piece ------------------//
                 if (cellNextTop.className.slice(11).trim() === 'cellWhitePiece' && cellTargetUp.className.slice(11).trim() !== 'cellWhitePiece') {
 
-
+                    //------------ Check Potential position for EasyMode ----------------//
+                    if (easyMode.easyMode === true) {
+                        easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
+                        return
+                    }
                     //-------------- turn over black piece -> white piece --------------//
                     for (let i = cellLine - 1, y = 0; y < compteur; i--, y++) {
                         document.getElementById(`${i}${cellColumn}_cell`).classList.add('cellWhitePiece')
@@ -109,7 +142,7 @@ const rulesWhite = {
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('whitePiece--anim');
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('blackPiece--anim');
                     }
-
+                    movePiece.counterRule++;
                     movePiece.putPiece(event);
                     break;
                 }
@@ -119,10 +152,16 @@ const rulesWhite = {
         }
     },
 
-    ruleDown() {
+    ruleDown(event, cellLineEasyMode, cellcolumnEasyMode) {
 
-        let cellLine = Number(event.currentTarget.id.split('')[0]);
-        const cellColumn = Number(event.currentTarget.id.split('')[1]);
+        if (easyMode.easyMode === true) {
+            cellLine = cellLineEasyMode;
+            cellColumn = cellcolumnEasyMode;
+        } else {
+
+            cellLine = Number(event.currentTarget.id.split('')[0]);
+            cellColumn = Number(event.currentTarget.id.split('')[1]);
+        }
         let compteur = -1;
         const cellTargetDown = document.getElementById(`${cellLine + 1}${cellColumn}_cell`);
 
@@ -137,6 +176,11 @@ const rulesWhite = {
                 //------------if white Piece -> turn over black piece ------------------//
                 if (cellNextBottom.className.slice(11).trim() === 'cellWhitePiece' && cellTargetDown.className.slice(11).trim() !== 'cellWhitePiece') {
 
+                    //------------ Check Potential position for EasyMode ----------------//
+                    if (easyMode.easyMode === true) {
+                        easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
+                        return
+                    }
                     //-------------- turn over black piece -> white piece --------------//
                     for (let i = cellLine + 1, y = 0; y < compteur; i++, y++) {
                         document.getElementById(`${i}${cellColumn}_cell`).classList.add('cellWhitePiece')
@@ -148,7 +192,7 @@ const rulesWhite = {
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.add('whitePiece--anim');
                         document.getElementById(`${i}${cellColumn}_cell`).children[0].classList.remove('blackPiece--anim');
                     }
-
+                    movePiece.counterRule++;
                     movePiece.putPiece(event);
                     break;
                 }
