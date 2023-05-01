@@ -27,7 +27,7 @@ const easyMode = {
 
 
     testAllBoard() {
-        if (easyMode.firstLauch === true) {
+        if (easyMode.easyModeActive === true) {
             easyMode.easyMode = true;
 
             for (let cellLine = 1; cellLine < 9; cellLine++) {
