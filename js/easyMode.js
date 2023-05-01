@@ -2,39 +2,47 @@ const easyMode = {
     easyMode: Boolean,
     saveCellPiece: Array,
     easyModeActive: Boolean,
+    firstLauch: Boolean,
 
-    waitingEasyMode(){
+    waitingEasyMode() {
         const activeEasyMode = document.querySelector('.btnEasyMode');
         activeEasyMode.addEventListener('click', easyMode.activation);
     },
 
-    activation(){
+    activation() {
         const activeEasyMode = document.querySelector('.btnEasyMode');
         activeEasyMode.classList.toggle('btnEasyModeActivated');
 
-        if (activeEasyMode.className.slice(11).trim() === 'btnEasyModeActivated'){
+        if (activeEasyMode.className.slice(19).trim() === 'btnEasyModeActivated') {
             easyMode.easyModeActive = true;
-        }else{ easyMode.easyModeActive = false
-            easyMode.removePotentialPiece();
+            easyMode.firstLauch = true;
+        } else {
+            easyMode.easyModeActive = false
+            easyMode.firstLauch = false;
         }
-       
+
         console.log(easyMode.easyModeActive)
+        console.log(easyMode.firstLauch)
     },
 
 
     testAllBoard() {
-        easyMode.easyMode = true;
+        if (easyMode.firstLauch === true) {
+            easyMode.easyMode = true;
 
-        for (let cellLine = 1; cellLine < 9; cellLine++) {
-            for (let cellColumn = 1; cellColumn < 9; cellColumn++) {
+            for (let cellLine = 1; cellLine < 9; cellLine++) {
+                for (let cellColumn = 1; cellColumn < 9; cellColumn++) {
 
-                movePiece.toCheckAroundPiece(event, cellLine, cellColumn);
+                    movePiece.toCheckAroundPiece(event, cellLine, cellColumn);
+                }
             }
+
+
+            easyMode.showPotentialPiece();
+            easyMode.firstLauch = false;
+            console.log('test')
+            // console.log('fin', easyMode.saveCellPiece)
         }
-
-
-        easyMode.showPotentialPiece();
-        // console.log('fin', easyMode.saveCellPiece)
     },
 
     showPotentialPiece() {
@@ -90,6 +98,7 @@ const easyMode = {
         easyMode.easyMode = false;
         easyMode.saveCellPiece = [];
         easyMode.easyModeActive = false;
+        easyMode.firstLauch = false;
     },
 
 
