@@ -21,7 +21,7 @@ const movePiece = {
     //--------- Buttun Reset -----------------//
     buttonReset() {
         const btn_Reset = document.querySelector('.btnReset');
-        btn_Reset.addEventListener('click', app.init);
+        btn_Reset.addEventListener('click', homePage.init);
 
         const btn_skip = document.querySelector('.btnSkip');
         btn_skip.addEventListener('click', movePiece.buttonSkip);
@@ -99,12 +99,14 @@ const movePiece = {
         //---Remove Piece Potential saved ---- //
         //-------------------------------------//   
         if (easyMode.easyMode === true) {
-            if (event.currentTarget.children.length === 1) {
-                if (event.currentTarget.children[0].className.slice(0, 9).trim() == 'potential') {
-                    easyMode.removePotentialPiece();
+            if (easyMode.firstLauch == false) {
+                if (event.currentTarget.children.length === 1) {
+                    if (event.currentTarget.children[0].className.slice(0, 9).trim() == 'potential') {
+                        easyMode.removePotentialPiece();
+                    }
+                } else {
+                    return
                 }
-            } else {
-                return
             }
         }
 
@@ -125,7 +127,7 @@ const movePiece = {
             let cellColumn;
 
             // --------------------------------- //
-            //------ Activation EasyMode -------//
+            // ------ Activation EasyMode -------//
             // --------------------------------- //
 
             if (easyMode.easyMode == true) {
@@ -141,8 +143,6 @@ const movePiece = {
                 console.log('click')
                 cellLine = Number(event.currentTarget.id.split('')[0]);
                 cellColumn = Number(event.currentTarget.id.split('')[1]);
-                console.log(event.currentTarget)
-
             }
 
             let cellLineNext = cellLine + 1;

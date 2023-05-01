@@ -128,10 +128,10 @@ const app = {
         document.querySelector('.blockPointReset').append(divResetEasyMode);
 
         // Button EASYMODE
-        const btnResetEasyMode = document.createElement('button');
-        btnResetEasyMode.className = 'btnEasyMode';
-        btnResetEasyMode.innerHTML = 'Easy'
-        document.querySelector('#btnResetEasyMode').append(btnResetEasyMode);
+        // const btnResetEasyMode = document.createElement('button');
+        // btnResetEasyMode.className = 'btnEasyMode';
+        // btnResetEasyMode.innerHTML = 'Easy'
+        // document.querySelector('#btnResetEasyMode').append(btnResetEasyMode);
 
         // Button RESET
         const btnReset = document.createElement('button');
@@ -173,10 +173,8 @@ const app = {
         app.initPieceWhiteBlack();
         app.createcountPoint();
         movePiece.init();
-        easyMode.init();
+        easyMode.testAllBoard();
+        
 
     },
 }
-
-
-app.init()
