@@ -4,7 +4,7 @@ const easyMode = {
     easyModeActive: Boolean,
     firstLauch: Boolean,
 
-    waitingEasyMode() {
+    handleEasyMode() {
         const activeEasyMode = document.querySelector('.btnEasyMode');
         activeEasyMode.addEventListener('click', easyMode.activation);
     },
@@ -21,8 +21,6 @@ const easyMode = {
             easyMode.firstLauch = false;
         }
 
-        console.log(easyMode.easyModeActive)
-        console.log(easyMode.firstLauch)
     },
 
 
@@ -41,7 +39,6 @@ const easyMode = {
             easyMode.showPotentialPiece();
             easyMode.firstLauch = false;
             console.log('test')
-            // console.log('fin', easyMode.saveCellPiece)
         }
     },
 
@@ -94,7 +91,7 @@ const easyMode = {
 
 
     init() {
-        easyMode.waitingEasyMode();
+        easyMode.handleEasyMode();
         easyMode.easyMode = false;
         easyMode.saveCellPiece = [];
         easyMode.easyModeActive = false;

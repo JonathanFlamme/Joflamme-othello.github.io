@@ -22,6 +22,7 @@ main {
 
 }
 
+
 /*---------- HEADER -----------*/
 header {
     display: flex;
@@ -354,12 +355,10 @@ footer h3 {
 .btnHome{
     font-size: 0.8em;
     height: 60px;
-    width: 150px;
+    width: 180px;
     font-weight: bolder;
     font-family: sans-serif;
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 15px 10px 0 10px;
     background-image: url('../image/bg_point_hoodLight.jpg');
     border: none;
     border-radius: 10px;
@@ -375,21 +374,24 @@ footer h3 {
 .btnHome:hover {
     font-size: 0.9em;
 }
-.btnLaunchGame{
-    margin-top: 100px;
+.btncomputerMode{
+    margin: 50px 0 15px 0;
 }
-.descriptionEasyMode{
-    
+.btnLaunchGame{
+    margin-top: 150px;
+}
+
+.descriptionMode{
     color:white;
+    width: 80%;
     text-align: center;
     font-size: 1.4em;
-
 }
-.btnEasyModeActivated{
+
+.btnEasyModeActivated, .btncomputerModeActivated{
     box-shadow: none;
     transform: translateY(3px);
     font-size: 0.9em;
-
 }
 
 @media (min-width : 700px) {
@@ -399,6 +401,7 @@ footer h3 {
 
     }
 
+    
     body {
         font-family: 'Dancing Script', cursive;
         background-image: url('../image/othello-spin-master.jpg');
