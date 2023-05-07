@@ -4,15 +4,18 @@ const rulesBlack = {
         let cellLine;
         let cellColumn;
 
-
         if (easyMode.easyMode === true) {
             cellLine = cellLineEasyMode;
             cellColumn = cellcolumnEasyMode;
+        } else if (computerMode.putPieceComputer === true) {
+            cellLine = Number(cellLineEasyMode);
+            cellColumn = Number(cellcolumnEasyMode);
         } else {
 
             cellLine = Number(event.currentTarget.id.split('')[0]);
             cellColumn = Number(event.currentTarget.id.split('')[1]);
         }
+
         const cellTargetLeft = document.getElementById(`${cellLine}${cellColumn-1}_cell`);
         let compteur = -1;
 
@@ -27,7 +30,7 @@ const rulesBlack = {
                 if (cellNextLeft.className.slice(11).trim() === 'cellBlackPiece' && cellTargetLeft.className.slice(11).trim() !== 'cellBlackPiece') {
 
                     //------------ Check Potential position for EasyMode ----------------//
-                    if (easyMode.easyMode === true) {
+                    if (easyMode.easyMode === true && computerMode.putPieceComputer === false) {
                         easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
                         return
                     }
@@ -58,6 +61,9 @@ const rulesBlack = {
         if (easyMode.easyMode === true) {
             cellLine = cellLineEasyMode;
             cellColumn = cellcolumnEasyMode;
+        } else if (computerMode.putPieceComputer === true) {
+            cellLine = Number(cellLineEasyMode);
+            cellColumn = Number(cellcolumnEasyMode);
         } else {
 
             cellLine = Number(event.currentTarget.id.split('')[0]);
@@ -80,7 +86,7 @@ const rulesBlack = {
                 if (cellNextRight.className.slice(11).trim() === 'cellBlackPiece' && cellTargetRight.className.slice(11).trim() !== 'cellBlackPiece') {
 
                     //------------ Check Potential position for EasyMode ----------------//
-                    if (easyMode.easyMode === true) {
+                    if (easyMode.easyMode === true && computerMode.putPieceComputer === false) {
                         easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
                         return
                     }
@@ -111,6 +117,9 @@ const rulesBlack = {
         if (easyMode.easyMode === true) {
             cellLine = cellLineEasyMode;
             cellColumn = cellcolumnEasyMode;
+        } else if (computerMode.putPieceComputer === true) {
+            cellLine = Number(cellLineEasyMode);
+            cellColumn = Number(cellcolumnEasyMode);
         } else {
 
             cellLine = Number(event.currentTarget.id.split('')[0]);
@@ -133,7 +142,7 @@ const rulesBlack = {
                 if (cellNextTop.className.slice(11).trim() === 'cellBlackPiece' && cellTargetUp.className.slice(11).trim() !== 'cellBlackPiece') {
 
                     //------------ Check Potential position for EasyMode ----------------//
-                    if (easyMode.easyMode === true) {
+                    if (easyMode.easyMode === true && computerMode.putPieceComputer === false) {
                         easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
                         return
                     }
@@ -164,6 +173,9 @@ const rulesBlack = {
         if (easyMode.easyMode === true) {
             cellLine = cellLineEasyMode;
             cellColumn = cellcolumnEasyMode;
+        } else if (computerMode.putPieceComputer === true) {
+            cellLine = Number(cellLineEasyMode);
+            cellColumn = Number(cellcolumnEasyMode);
         } else {
 
             cellLine = Number(event.currentTarget.id.split('')[0]);
@@ -186,7 +198,7 @@ const rulesBlack = {
                 if (cellNextDown.className.slice(11).trim() === 'cellBlackPiece' && cellTargetDown.className.slice(11).trim() !== 'cellBlackPiece') {
 
                     //------------ Check Potential position for EasyMode ----------------//
-                    if (easyMode.easyMode === true) {
+                    if (easyMode.easyMode === true && computerMode.putPieceComputer === false) {
                         easyMode.saveCellPieces(cellLineEasyMode, cellcolumnEasyMode);
                         return
                     }

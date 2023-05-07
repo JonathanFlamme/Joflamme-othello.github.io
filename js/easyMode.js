@@ -25,7 +25,9 @@ const easyMode = {
 
 
     testAllBoard() {
+
         if (easyMode.easyModeActive === true) {
+
             easyMode.easyMode = true;
 
             for (let cellLine = 1; cellLine < 9; cellLine++) {
@@ -35,10 +37,16 @@ const easyMode = {
                 }
             }
 
-
             easyMode.showPotentialPiece();
+            
+            if (computerMode.computerModeActive === true && app.whitePlayer === false) {
+
+                computerMode.choiceCellComputer();
+
+                easyMode.testAllBoard();
+            }
             easyMode.firstLauch = false;
-            console.log('test')
+
         }
     },
 
@@ -54,6 +62,10 @@ const easyMode = {
             } else {
                 piecePotential.className = 'potential potential--black';
             }
+            
+            if(computerMode.computerNotEasyMode === true){
+                piecePotential.classList.add('potentialHidden')
+            }
             piecePotential.id = `${cell}_potential`;
             document.getElementById(cell).append(piecePotential)
         });
@@ -61,6 +73,7 @@ const easyMode = {
     },
 
     removePotentialPiece() {
+
 
         easyMode.saveCellPiece.forEach(cell => {
             const potential = document.getElementById(`${cell}_potential`)

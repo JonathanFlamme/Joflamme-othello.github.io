@@ -388,7 +388,7 @@ footer h3 {
     font-size: 1.4em;
 }
 
-.btnEasyModeActivated, .btncomputerModeActivated{
+.btnEasyModeActivated, .btnComputerModeActivated{
     box-shadow: none;
     transform: translateY(3px);
     font-size: 0.9em;
@@ -461,4 +461,8 @@ footer h3 {
 .potential--white {
     background: radial-gradient(circle at 10px 10px, rgb(255, 255, 255), rgb(165, 165, 165));
     box-shadow: 1px 1px 3px black;
+}
+
+.potentialHidden{
+    visibility: hidden;
 }

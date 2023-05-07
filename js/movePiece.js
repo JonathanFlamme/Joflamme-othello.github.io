@@ -34,8 +34,12 @@ const movePiece = {
 
     //--------- Put Piece in the board ----------//
     putPiece(event) {
-        const cellElement = event.currentTarget;
-
+        let cellElement;
+        if (computerMode.putPieceComputer === true) {
+           cellElement = computerMode.cellFullComputer;
+        } else {
+            cellElement = event.currentTarget;
+        }
         //--------- Create piece in the board ----------//
         if (cellElement.children.length === 0) {
             const piece = document.createElement('div');
@@ -52,7 +56,7 @@ const movePiece = {
             }
             cellElement.append(piece);
 
-            //----------Title change when player put a piece--------------//
+            //---------- Title change when player put a piece --------------//
 
             app.whoPlayerPlayed();
             countPoint.countPoint();
@@ -86,7 +90,8 @@ const movePiece = {
         }
 
         // ---- Activation EASYMODE with INPUT FRONT ------ //
-        if (movePiece.counterRule == 0 && easyMode.easyMode == false && easyMode.easyModeActive == true) {
+        if (movePiece.counterRule == 0 && easyMode.easyMode == false && (easyMode.easyModeActive == true || computerMode.computerModeActive == true) && computerMode.putPieceComputer === false) {
+            
             easyMode.testAllBoard()
         }
 
@@ -94,14 +99,21 @@ const movePiece = {
 
     //------------------- Check if piece Around Target cell ----------------------------//
     toCheckAroundPiece(event, cellLineEasyMode, cellcolumnEasyMode) {
-
+        
+        let cellTarget
         //-------------------------------------//
         //---Remove Piece Potential saved ---- //
         //-------------------------------------//   
+        if (computerMode.putPieceComputer === true) {
+            cellTarget = document.getElementById(`${cellLineEasyMode}${cellcolumnEasyMode}_cell`);
+        } else {
+            cellTarget = event.currentTarget;
+        }
+
         if (easyMode.easyMode === true) {
             if (easyMode.firstLauch == false) {
-                if (event.currentTarget.children.length === 1) {
-                    if (event.currentTarget.children[0].className.slice(0, 9).trim() == 'potential') {
+                if (cellTarget.children.length === 1) {
+                    if (cellTarget.children[0].className.slice(0, 9).trim() == 'potential') {
                         easyMode.removePotentialPiece();
                     }
                 } else {
@@ -121,7 +133,7 @@ const movePiece = {
         movePiece.pieceAround = false;
 
 
-        if (event.currentTarget.children.length === 0 || easyMode.easyMode == true) {
+        if (cellTarget.children.length === 0 || easyMode.easyMode == true) {
 
             let cellLine;
             let cellColumn;
@@ -138,6 +150,10 @@ const movePiece = {
                 if (document.getElementById(cellElementTesting).children.length === 1) {
                     return
                 }
+            } else if (computerMode.putPieceComputer === true) {
+                cellLine = Number(cellLineEasyMode);
+                cellColumn = Number(cellcolumnEasyMode);
+
             } else {
                 // Only on a click on a cell
                 console.log('click')
