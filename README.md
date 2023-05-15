@@ -1,9 +1,7 @@
-## Jeu de plateau Othello
+## Othello
 
-### Pour lancer le jeu :  [Othello](https://joflamme88.github.io/Joflamme-othello.github.io/).
+### Play the game :  [Othello](https://joflamme88.github.io/Joflamme-othello.github.io/).
 
-Mode facile pour voir la prévisualisation des pièces
+EasyMode : preview next move
+ComputerMode : play versus computer
 
-Mode Ordinateur pour jouer tout seul contre l'ordi
-
-Lancer le jeu sans ces 2 options, lance le jeu player vs player
