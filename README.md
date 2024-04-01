@@ -1,6 +1,6 @@
 ## Othello
 
-### Play the game :  [Othello](https://joflamme88.github.io/Joflamme-othello.github.io/).
+### Play the game :  [Othello](https://jonathanFlamme.github.io/Joflamme-othello.github.io/).
 
 
 EasyMode : preview next move
